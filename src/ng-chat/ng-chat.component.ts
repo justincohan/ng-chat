@@ -397,7 +397,7 @@ export class NgChat implements OnInit, IChatController {
                 map((result: Message[]) => {
                     result.forEach((message) => this.assertMessageType(message));
                     
-                    window.messages = result.concat(window.messages);
+                    window.messages = window.messages.concat(result);
                     window.isLoadingHistory = false;
     
                     const direction: ScrollDirection = (window.historyPage == 1) ? ScrollDirection.Bottom : ScrollDirection.Top;
